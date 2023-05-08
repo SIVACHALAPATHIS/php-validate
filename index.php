@@ -4,7 +4,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = test_input($_POST["email"]);
     $message = test_input($_POST["message"]);
 
-    // Validate name
     if(empty($name)) {
         $name_error = "Name is required";
     } else {
@@ -13,7 +12,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Validate email
     if(empty($email)) {
         $email_error = "Email is required";
     } else {
@@ -22,12 +20,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Validate message
     if(empty($message)) {
         $message_error = "Message is required";
     }
 
-    // If there are no errors, send the email
     if(empty($name_error) && empty($email_error) && empty($message_error)) {
         $to = "youremail@example.com";
         $subject = "New message from website";
